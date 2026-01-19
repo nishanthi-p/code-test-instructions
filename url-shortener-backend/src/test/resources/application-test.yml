@@ -4,10 +4,13 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password:
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate
     show-sql: false
   h2:
     console:

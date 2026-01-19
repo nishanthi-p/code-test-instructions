@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-url-shortener-table
+      author: nishanthi
+      changes:
+        - createTable:
+            tableName: url_shortener
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: alias
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: original_url
+                  type: VARCHAR(2048)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+
+        - createIndex:
+            indexName: idx_url_shortener_alias
+            tableName: url_shortener
+            unique: true
+            columns:
+              - column:
+                  name: alias
+
+        - createIndex:
+            indexName: idx_url_shortener_created_at
+            tableName: url_shortener
+            columns:
+              - column:
+                  name: created_at
