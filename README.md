@@ -63,7 +63,7 @@ This will start:
 |----------|-----|
 | Frontend UI | http://localhost:3000 |
 | Swagger API Docs | http://localhost:8080/swagger-ui.html |
-| OpenAPI JSON | http://localhost:8080/api-docs |
+| OpenAPI JSON | http://localhost:8080/v3/api-docs |
 
 ### 4. Stop the application
 
@@ -72,7 +72,7 @@ docker-compose down
 ```
 ---
 
-## 💻 Running Locally (Development)
+## Running Locally (Development)
 
 ### Backend
 
@@ -123,7 +123,7 @@ Frontend available at: **http://localhost:3000**
 
 ---
 
-## 📘 Example Usage
+## Example Usage
 
 ### Create a shortened URL (auto-generated alias)
 
@@ -241,7 +241,7 @@ curl --request GET \
 
 ---
 
-## 🧪 Running Tests
+## Running Tests
 
 ### Backend Unit & Integration Tests
 
